@@ -119,7 +119,7 @@ Procedure WebRadioLoad()
   Protected Buffer.s, i.i
   
   Restore WebRadio
-  For i=1 To 9
+  For i=1 To 4
     AddElement(WebRadio())
     
     Read.s Buffer     
@@ -261,18 +261,13 @@ DataSection
   Webradio:
   
   Data.s "http://server1.chilltrax.com:9000", "Chilltrax"
-  Data.s "http://broadcast.infomaniak.ch/frequencejazz-high.mp3","Jazz Radio"
   Data.s "http://stream.pulsradio.com:5000", "Pulse Radio"
-  Data.s "http://stream1.chantefrance.com/Chante_France", "Chante France"
-  Data.s "http://streaming202.radionomy.com:80/70s-80s-90s-riw-vintage-channel","RIWVintage Channel"
-  Data.s "http://mfm.ice.infomaniak.ch/mfm-128.mp3", "MFM Radio"
-  Data.s "http://broadcast.infomaniak.net/tsfjazz-high.mp3", "TSF Jazz"
   Data.s "http://199.101.51.168:8004", "Blues Connection"
   Data.S "http://185.33.22.15:10036", "GAIA"
 EndDataSection
 
-; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; CursorPosition = 107
-; FirstLine = 103
+; IDE Options = PureBasic 5.60 (Windows - x86)
+; CursorPosition = 121
+; FirstLine = 106
 ; Folding = ----
 ; EnableXP
