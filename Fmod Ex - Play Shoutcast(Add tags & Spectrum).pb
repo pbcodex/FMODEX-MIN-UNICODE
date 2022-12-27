@@ -259,15 +259,8 @@ EndProcedure
 
 DataSection
   Webradio:
-  
   Data.s "http://server1.chilltrax.com:9000", "Chilltrax"
-  Data.s "http://stream.pulsradio.com:5000", "Pulse Radio"
-  Data.s "http://199.101.51.168:8004", "Blues Connection"
+  Data.s "http://tsfjazz.ice.infomaniak.ch/tsfjazz-high.mp3", "TSF Jazz"
+  Data.s "http://server3.luschaudio.com:10304/stream?type=http&nocache=216", "Golf of lune"
   Data.S "http://185.33.22.15:10036", "GAIA"
 EndDataSection
-
-; IDE Options = PureBasic 5.60 (Windows - x86)
-; CursorPosition = 121
-; FirstLine = 106
-; Folding = ----
-; EnableXP
