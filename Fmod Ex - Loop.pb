@@ -25,8 +25,3 @@ FMOD_Channel_SetVolume(channel, 0.5)
 
 ; Boucle évenementielle
 Repeat : Until WaitWindowEvent(1) = #PB_Event_CloseWindow 
-
-; IDE Options = PureBasic 6.30 (Windows - x64)
-; CursorPosition = 20
-; EnableXP
-; CompileSourceDirectory
