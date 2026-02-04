@@ -1,16 +1,19 @@
-﻿;/ FMODEX-Min.pbi for fmodex 
+;/ FMODEX-Min.pbi for fmodex 
 ;/
 ;/ Based on the code of Froggerprogger - 27.02.2007 - http://www.purebasic.fr/english/viewtopic.php?f=12&t=25144
-;/ Update       : falsam, 13.06.2016 (PB 5.50)
+;/ Update       : falsam, 04.02.2026 (PB 6.30)
 ;/ Contributor  : El Papounet, nco2k, spikey
 
-#FMOD_INIT_NORMAL = $0      ; All platforms - Initialize normally.
-#FMOD_CREATESTREAM = $80    ; Decompress at runtime, streaming from the source provided (standard stream).
-#FMOD_SOFTWARE = $40        ; Makes sound reside in software.
-#FMOD_CHANNEL_FREE = -1     ; For a channel index, FMOD chooses a free voice using the priority system.
-#FMOD_CHANNEL_REUSE = -2    ; For a channel index, re-use the channel handle that was passed in.
+#FMOD_INIT_NORMAL = $0        ; All platforms - Initialize normally.
+#FMOD_CREATESTREAM = $80      ; Decompress at runtime, streaming from the source provided (standard stream).
+#FMOD_SOFTWARE = $40          ; Makes sound reside in software.
+#FMOD_CHANNEL_FREE = -1       ; For a channel index, FMOD chooses a free voice using the priority system.
+#FMOD_CHANNEL_REUSE = -2      ; For a channel index, re-use the channel handle that was passed in.
 
-#FMOD_TIMEUNIT_MS = $1      ; Milliseconds.
+#FMOD_TIMEUNIT_MS = $1        ; Milliseconds.
+
+#FMOD_LOOP_OFF = $00000001    ; Autoplay off
+#FMOD_LOOP_NORMAL = $00000002 ; Autoplay normal
 
 Structure FMOD_TAG
   type.l                    ; [out] The type of this tag.
@@ -92,12 +95,16 @@ If fmodLib
   ;- FMOD_Channel_GetSpectrum_
   Prototype.l FMOD_Channel_GetSpectrum_Prototype (channel.l, *Spectrumarray, Numvalues.l, Channeloffset.l, Windowtype.l)
   Global FMOD_Channel_GetSpectrum.FMOD_Channel_GetSpectrum_Prototype = GetFunction(fmodLib, "FMOD_Channel_GetSpectrum")
+  
+  ;- FMOD_Channel_Isplaying_ 
+  Prototype.l FMOD_Channel_IsPlaying_Prototype(Channel.l, *IsPlaying)
+  Global FMOD_Channel_IsPlaying.FMOD_Channel_IsPlaying_Prototype = GetFunction(fmodLib, "FMOD_Channel_IsPlaying")
+  
+  ;- FMOD_Sound_SetMode_ Autoplay yes or no
+  Prototype.l FMOD_Sound_SetMode_Prototype(Sound.l, Mode)
+  Global FMOD_Sound_SetMode.FMOD_Sound_SetMode_Prototype = GetFunction(fmodLib, "FMOD_Sound_SetMode")
 
 Else
   Debug "fmodex.dll or fmodex64.dll is needed and is not found." 
   End
 EndIf
-; IDE Options = PureBasic 5.50 beta 1 (Windows - x86)
-; FirstLine = 52
-; Folding = -
-; EnableXP
